@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { reactive } from "vue";
 const waterMarkConfig = reactive({
-  content: "某某水厂",
+  content: "测试版",
   font: {
-    fontSize: 35,
+    fontSize: 16,
     color: "rgba(0, 0, 0, 0.15)",
   },
 });

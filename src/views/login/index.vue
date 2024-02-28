@@ -46,7 +46,7 @@
     <div class="loginBottom">
       <div class="textUnit " :class="{ 'companyScale': prodEnv }">
         承建单位：某某水厂 &nbsp; &nbsp; &nbsp;
-        技术支持：苏州清唯智联科技有限公司
+        技术支持：某某科技有限公司
       </div>
     </div>
   </div>
@@ -206,7 +206,8 @@ export default defineComponent({
   background-repeat: no-repeat;
   background-size: 100% 100%;
   overflow: hidden;
-  // background-image: url("/business-public/images/login/loginBGNew.png");
+  background-color: #1A554C;
+  background-image: url("/business-public/images/login/loginBg.png");
   position: relative;
 
   .loginHeader {
