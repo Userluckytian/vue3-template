@@ -1,27 +1,42 @@
 <script setup lang="ts">
+import { reactive } from "vue";
+const waterMarkConfig = reactive({
+  content: "新蔡县自来水公司",
+  font: {
+    fontSize: 35,
+    color: "rgba(0, 0, 0, 0.15)",
+  },
+});
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
+  <el-watermark
+    :content="waterMarkConfig.content"
+    :font="waterMarkConfig.font"
+    class="elMark"
+  >
+    <router-view></router-view>
+  </el-watermark>
 </template>
 
 <style scoped>
+.elMark {
+  width: 100%;
+  height: 100%;
+  min-width: fit-content;
+  min-height: fit-content;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }

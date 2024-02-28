@@ -4,17 +4,39 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "dev": "vite --mode development",
+    "buildDev": "vue-tsc --noEmit && vite build --mode devTest",
+    "build": "vue-tsc --noEmit && vite build --mode production",
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.3.4"
+    "@element-plus/icons-vue": "^2.1.0",
+    "axios": "^1.4.0",
+    "echarts": "^5.4.2",
+    "echarts-liquidfill": "^3.1.0",
+    "echarts-wordcloud": "^2.1.0",
+    "element-plus": "^2.4.2",
+    "md5": "^2.3.0",
+    "moment": "^2.29.4",
+    "pinia": "^2.1.4",
+    "pinia-plugin-persist": "^1.0.0",
+    "unplugin-icons": "^0.16.3",
+    "v-viewer": "^3.0.11",
+    "vue": "^3.3.4",
+    "vue-countup-v3": "^1.4.0",
+    "vue-router": "^4.0.13"
   },
   "devDependencies": {
+    "@iconify-json/el": "^1.1.5",
+    "@types/md5": "^2.3.2",
     "@vitejs/plugin-vue": "^4.2.3",
+    "sass": "^1.63.6",
+    "sass-loader": "^13.3.2",
     "typescript": "^5.0.2",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-vue-components": "^0.25.1",
     "vite": "^4.4.0",
+    "vite-plugin-compression": "^0.5.1",
     "vue-tsc": "^1.8.3"
   }
 }

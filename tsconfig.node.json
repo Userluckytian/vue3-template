@@ -3,8 +3,11 @@
     "composite": true,
     "skipLibCheck": true,
     "module": "ESNext",
-    "moduleResolution": "bundler",
-    "allowSyntheticDefaultImports": true
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    // 自己新增的部分
+    "noImplicitAny": false,
   },
-  "include": ["vite.config.ts"]
+  "include": ["vite.config.ts"],
+  "exclude": ["node_modules", "dist", "**/*.js"],
 }
