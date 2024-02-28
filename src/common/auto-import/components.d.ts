@@ -17,8 +17,13 @@ declare module 'vue' {
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElInput: typeof import('element-plus/es')['ElInput']
     ElWatermark: typeof import('element-plus/es')['ElWatermark']
+    HeaderTitleOne: typeof import('./../../components/title/header-title-one.vue')['default']
+    NoData: typeof import('./../../components/empty/noData.vue')['default']
+    NumCountUp: typeof import('./../../components/numCountUp/numCountUp.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Select: typeof import('./../../components/customSelect/select.vue')['default']
+    Transition: typeof import('./../../components/animation/transition.vue')['default']
   }
   export interface ComponentCustomProperties {
     vLoading: typeof import('element-plus/es')['ElLoadingDirective']

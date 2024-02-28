@@ -1,7 +1,6 @@
 import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
-import { mars3dPlugin } from "vite-plugin-mars3d"
 // import viteCompression from 'vite-plugin-compression';
 import define from './src/common/constant/define.js';
 
@@ -44,8 +43,6 @@ export default ({ mode }) => {
 
         dts: resolve(pathSrc, "common/auto-import/auto-imports.d.ts"),
       }),
-      // 引入mars3D
-      mars3dPlugin(),
       // 自动导入 Element Plus 组件
       Components({
         resolvers: [
