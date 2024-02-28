@@ -12,5 +12,15 @@ export function login(body: { [key: string]: unknown }) {
 }
 
 
+export function getAuthInfo() {
+    return request({
+        url: '/api/oauth/CurrentUser',
+        method: 'get',
+        params: {
+            applyId: '433630222135488389'
+        },
+    })
+}
+
 
 

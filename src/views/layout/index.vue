@@ -32,8 +32,8 @@ onMounted(() => {
   background-image: url("/business-public/images/bigOv11/website_bg.webp");
   background-size: cover;
   background-repeat: no-repeat;
-  width: 7696px;
-  height: 1352px;
+  width: 100%;
+  height: 100%;
   overflow: hidden; // 这个好像无效，目前的处理方式是调整滚动条的宽度和高度
   position: relative;
 

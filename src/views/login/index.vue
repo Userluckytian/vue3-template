@@ -11,7 +11,7 @@
       <div class="loginForm" :class="{ 'loginScale': prodEnv }">
         <div class="formTop">
           <img :src="logo_blue" alt="" />
-          <div class="title">新蔡县自来水公司</div>
+          <div class="title">标题</div>
         </div>
         <div class="formHeader">智慧水务可视化平台</div>
         <div class="form-content">
@@ -32,21 +32,6 @@
               <span style="color: #48c0ff">记住密码</span>
               <span>忘记密码？</span>
             </div> -->
-            <div class="formItem">
-              <!-- 二维码 -->
-              <el-form-item prop="code" v-if="needValidCode">
-                <div class="codeItem">
-                  <div class="left">
-                    <el-input prefix-icon="Key" v-model="loginForm.code" placeholder="请输入验证码" name="code"
-                      autocomplete="off">
-                    </el-input>
-                  </div>
-                  <div class="right">
-                    <img id="imgcode" :src="validCodePng" @click="changeImg" />
-                  </div>
-                </div>
-              </el-form-item>
-            </div>
             <div class="formItem btn">
               <el-form-item>
                 <el-button class="btn" type="primary" @click="submitForm(ruleFormRef)" @keydown.enter="keyDown"
@@ -77,8 +62,7 @@ import { User, Lock } from "@element-plus/icons-vue"; // element的图标
 
 import {
   login,
-  getAuthInfo,
-  getIsNeedOpenValidCode,
+  getAuthInfo
 } from "@/api/common-api/login/login"; // 接口调用
 
 import md5 from "md5"; // 加密工具
@@ -180,20 +164,6 @@ export default defineComponent({
       }
     };
 
-    const validIsNeedCode = () => {
-      getIsNeedOpenValidCode().then((res) => {
-        needValidCode.value = res.data.enableVerificationCode;
-        if (needValidCode.value) {
-          changeImg();
-        }
-      });
-    };
-
-    // 更新验证码
-    const changeImg = () => {
-      timestamp.value = Math.random(); // t i p: 验证码的生成时间要传入到接口中，用于实现时间上匹配！
-      validCodePng.value = `${define.preFix}/api/oauth/ImageCode/4/${timestamp.value}`;
-    };
     let prodEnv = ref(true);
 
     onMounted(() => {
@@ -201,8 +171,6 @@ export default defineComponent({
       prodEnv.value = isProd;
       //绑定监听事件
       window.addEventListener("keydown", keyDown);
-      // 校验是否开启二维码
-      validIsNeedCode();
     });
 
     onUnmounted(() => {
@@ -222,7 +190,6 @@ export default defineComponent({
       submitLoadingRef, // 提交表单的loading
       waterLogoWhite,
       logo_blue,
-      changeImg,
       validCodePng,
       needValidCode,
     };
