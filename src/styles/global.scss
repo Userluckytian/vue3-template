@@ -1,0 +1,242 @@
+$website-top-height: 97px;
+$pointer: url("./mouse/Hand.cur") auto;
+
+@mixin flex-start-center($direction: row) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin flex-start($direction: row, $align-items: center) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: $align-items;
+  flex-direction: $direction;
+}
+
+@mixin flex-center-center($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin flex-between-start($direction: row) {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-direction: $direction;
+}
+
+@mixin flex-between-center($direction: row) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin flex-between-end($direction: row) {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: $direction;
+}
+
+@mixin flex-end-center($direction: row) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin flex-center-start($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: $direction;
+}
+
+@mixin flex-start-end($direction: row) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: $direction;
+}
+
+@mixin flex-end-end($direction: row) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: $direction;
+}
+
+@mixin flex-around-center($direction: row) {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+// 普通屏幕
+@mixin normalView {
+  @media (max-width: 1921px) {
+    @content;
+  }
+}
+
+// 大屏
+@mixin bigView {
+  @media (min-width: 1921px) {
+    @content;
+  }
+}
+
+// 响应式： https://www.w3cplus.com/preprocessor/the-solution-to-media-queries-in-sass.html 采用问题解决前的这种，原因：不需要写两遍！
+// 依据zorro标准划分
+@mixin xs {
+  @media (min-width: 480px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: 768px) and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: 992px) and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: 1200px) and (max-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin no-warp($maxWidth: 2rem) {
+  max-width: $maxWidth;
+  white-space: nowrap; // 永不换行
+  text-overflow: ellipsis; // 可以用来多行文本的情况下，用省略号“...”隐藏超出范围的文本。
+  overflow: hidden;
+}
+
+/* 动画过渡属性  */
+.left-fade-animation-enter-active,
+.right-fade-animation-enter-active {
+  transition: all 0.8s cubic-bezier(0.42, 0, 0.32, 1);
+  // transition: all 0.8s ease-out;
+}
+
+.left-fade-animation-leave-active,
+.right-fade-animation-leave-active {
+  transition: all 0.8s cubic-bezier(0.42, 0, 0.32, 1);
+}
+
+.left-fade-animation-enter-from,
+.left-fade-animation-leave-to {
+  transform: translateX(-1200px);
+  opacity: 0;
+}
+
+.right-fade-animation-enter-from,
+.right-fade-animation-leave-to {
+  transform: translateX(1200px);
+  opacity: 0;
+}
+
+/* dataV的Style属性 */
+:deep(.dv-scroll-board .header .header-item) {
+  font-weight: bold;
+  font-size: 0.7rem;
+  flex: 1 1 auto;
+}
+
+:deep(.dv-scroll-board .rows) {
+  overflow: hidden;
+}
+
+:deep(.dv-scroll-board .rows .index),
+:deep(.dv-scroll-board .rows .ceil) {
+  font-size: 0.64rem;
+  color: #fff;
+  flex: 1 1 auto;
+}
+
+/* elementPlus 弹窗样式调整 */
+
+:deep(.el-dialog) {
+  // background-color: transparent !important;
+  // border: solid 1px #fff;
+  background: #ffffff1f;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 0rem;
+}
+
+:deep(.el-dialog__header) {
+  padding: 0rem;
+  margin: 0rem;
+}
+
+:deep(.el-dialog__body) {
+  padding: 0rem;
+  margin: 0rem;
+}
+
+:deep(.el-dialog__footer) {
+  padding: 0rem;
+  margin: 0rem;
+}
+
+/* dialog弹窗 https://blog.csdn.net/u012733501/article/details/105660739/ */
+.videoDialog {
+  .el-dialog {
+    /* background-color: transparent !important; */
+    /* border: solid 1px #fff; */
+    background: #ffffff1f;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0rem;
+  }
+
+  .el-dialog__header {
+    padding: 0rem;
+    margin: 0rem;
+  }
+
+  .el-dialog__body {
+    padding: 0rem;
+    margin: 0rem;
+  }
+
+  .el-dialog__footer {
+    padding: 0rem;
+    margin: 0rem;
+  }
+}
+
+* {
+  font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+}
+
+.el-loading-mask {
+  background-color: #0a0a0a63 !important;
+}
+
+.loginScale{
+    transform: scale(.46, 1.3);
+}
+.companyScale{
+    transform: scale(.5, 1.6);
+}

@@ -1,0 +1,1 @@
+export type MapEventFunc = null | ((e: any) => void) | undefined;
