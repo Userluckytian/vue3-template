@@ -45,7 +45,7 @@
     <!-- 底部内容 -->
     <div class="loginBottom">
       <div class="textUnit " :class="{ 'companyScale': prodEnv }">
-        承建单位：新蔡县自来水公司 &nbsp; &nbsp; &nbsp;
+        承建单位：某某水厂 &nbsp; &nbsp; &nbsp;
         技术支持：苏州清唯智联科技有限公司
       </div>
     </div>
@@ -105,6 +105,8 @@ export default defineComponent({
 
     // 提交登录表单
     const submitLogin = () => {
+      navTo("/layout/");
+      return 
       const submitFormData = {
         account: loginForm.account,
         password: md5(loginForm.password), // 'e10adc3949ba59abbe56e057f20f883e', // loginForm.password
@@ -204,7 +206,7 @@ export default defineComponent({
   background-repeat: no-repeat;
   background-size: 100% 100%;
   overflow: hidden;
-  background-image: url("/business-public/images/login/loginBGNew.png");
+  // background-image: url("/business-public/images/login/loginBGNew.png");
   position: relative;
 
   .loginHeader {
@@ -237,7 +239,7 @@ export default defineComponent({
   }
 
   .loginCenter {
-    height: calc(100% - 8.8rem);
+    height: 10rem;
     @include flex-center-center();
     position: relative;
     // background-color: #009ff1;
@@ -248,6 +250,7 @@ export default defineComponent({
       padding: 1rem;
       position: absolute;
       right: 10%;
+      top: 25%;
 
       .formTop {
         font-size: 1.6rem;
@@ -285,9 +288,9 @@ export default defineComponent({
       }
 
       .form-content {
-        height: 849px;
-        height: 1043px;
-        width: 1489px;
+        // height: 849px;
+        // height: 1043px;
+        // width: 1489px;
         background-image: url("/business-public/images/login/formBg.png");
         background-size: 100% 100%;
         background-repeat: no-repeat;

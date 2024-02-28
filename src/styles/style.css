@@ -114,7 +114,7 @@ html, body, #app{
   }
 } */
 html, body{
-  font-size: 35px;
+  font-size: 16px;
   zoom: 100%;
 }
 /* @media screen and (min-width: 1921px) {
